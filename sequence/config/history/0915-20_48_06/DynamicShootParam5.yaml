@@ -1,0 +1,93 @@
+M0:
+  Ba_left:
+    ElevationAngle: 0.52399
+    velocity: 10
+  Ba_right:
+    ElevationAngle: 0.52399
+    velocity: 10
+  Bb:
+    ElevationAngle: 0.2
+    velocity: 10
+  S_K1:
+    ElevationAngle: 0.5061454830783556
+    velocity: 18.6
+  S_K2:
+    ElevationAngle: 0.4363323129985824
+    velocity: 10
+  Sa1:
+    ElevationAngle: 0.5061454830783556
+    velocity: 10
+  Sa2:
+    ElevationAngle: 0.41887902047863906
+    velocity: 10
+  Sa3:
+    ElevationAngle: 0.3665191429188092
+    velocity: 10
+  Sb1:
+    ElevationAngle: 0.5061454830783556
+    velocity: 10
+  Sb2:
+    ElevationAngle: 0.3665191429188092
+    velocity: 10
+M1:
+  Ba_left:
+    ElevationAngle: 0.52399
+    velocity: 10
+  Ba_right:
+    ElevationAngle: 0.3665191429188092
+    velocity: 11.01464
+  Bb:
+    ElevationAngle: 0.7504915783575616
+    velocity: 10.53
+  S_K1:
+    ElevationAngle: 0.52399
+    velocity: 10
+  S_K2:
+    ElevationAngle: 0.52399
+    velocity: 10
+  Sa1:
+    ElevationAngle: 0.52399
+    velocity: 10
+  Sa2:
+    ElevationAngle: 0.52399
+    velocity: 10
+  Sa3:
+    ElevationAngle: 0.52399
+    velocity: 10
+  Sb1:
+    ElevationAngle: 0.52399
+    velocity: 10
+  Sb2:
+    ElevationAngle: 0.52399
+    velocity: 10
+M2:
+  Ba_left:
+    ElevationAngle: 0.52399
+    velocity: 10
+  Ba_right:
+    ElevationAngle: 0.52399
+    velocity: 10
+  Bb:
+    ElevationAngle: 0.52399
+    velocity: 10
+  S_K1:
+    ElevationAngle: 0.52399
+    velocity: 10
+  S_K2:
+    ElevationAngle: 0.3665191429188092
+    velocity: 12.63
+  Sa1:
+    ElevationAngle: 0.52399
+    velocity: 10
+  Sa2:
+    ElevationAngle: 0.715584993317675
+    velocity: 8.29
+  Sa3:
+    ElevationAngle: 0.3839724354387525
+    velocity: 16.22
+  Sb1:
+    ElevationAngle: 0.52399
+    velocity: 10
+  Sb2:
+    ElevationAngle: 0.47123889803846897
+    velocity: 12.66

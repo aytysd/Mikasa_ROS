@@ -1,0 +1,8 @@
+baud_rate: 4098
+DeviceName: "/dev/Serial"
+PollingRate: 0.001
+
+warn_limit: 30
+error_limit: 50
+
+dev_tolerance: 0.5

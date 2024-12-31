@@ -1,0 +1,21 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "ROS: catkin_build",
+            "type": "shell",
+            "command": "catkin",
+            "args": [
+                "build",
+                // "pure_pursuit",
+                "stm32interface",
+                // "sequence",
+            ],
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true 
+            }
+        }
+    ]
+}

@@ -1,0 +1,39 @@
+StaticShootParam:
+  M0:
+    MD_CANID: 5
+    ElevationAngleMDCANID: 10
+    SteeringServoCANID: 2
+    SendOutServoCANID: 2
+    SteeringServoTIM: "tim2_ch1"
+    SendOutServoTIM: "tim3_ch1"
+    Enabled: true
+  M1:
+    MD_CANID: 6
+    ElevationAngleMDCANID: 11
+    SteeringServoCANID: 2
+    SendOutServoCANID: 4
+    SteeringServoTIM: "tim2_ch2"
+    SendOutServoTIM: "tim2_ch1"
+    Enabled: true
+  M2:
+    MD_CANID: 7
+    ElevationAngleMDCANID: 12
+    SteeringServoCANID: 2
+    SendOutServoCANID: 2
+    SteeringServoTIM: "tim2_ch3"
+    SendOutServoTIM: "tim3_ch3"
+    Enabled: true
+  M3:
+    MD_CANID: 8
+    SteeringServoCANID: 3
+    SendOutServoCANID: 3
+    SteeringServoTIM: "tim2_ch1"
+    SendOutServoTIM: "tim3_ch1"
+    Enabled: true
+  M4:
+    MD_CANID: 9
+    SteeringServoCANID: 3
+    SendOutServoCANID: 3
+    SteeringServoTIM: "tim2_ch2"
+    SendOutServoTIM: "tim3_ch2"
+    Enabled: true

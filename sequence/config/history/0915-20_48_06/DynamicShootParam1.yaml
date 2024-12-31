@@ -1,0 +1,135 @@
+M0:
+  Ba_left:
+    ElevationAngle: 0
+    velocity: 10
+  Ba_right:
+    ElevationAngle: 0.52399
+    velocity: 10
+  Bb:
+    ElevationAngle: 0
+    velocity: 10
+  S_K1:
+    ElevationAngle: 0.3665191429188092
+    velocity: 10
+  S_K2:
+    ElevationAngle: 0.52399
+    velocity: 10
+  Sa1:
+    ElevationAngle: 0.5061454830783556
+    velocity: 10
+  Sa2:
+    ElevationAngle: 0.3665191429188092
+    velocity: 13.16
+  Sa3:
+    ElevationAngle: 0.52399
+    velocity: 10
+  Sb1:
+    ElevationAngle: 0.5934119456780721
+    velocity: 10
+  Sb2:
+    ElevationAngle: 0.52399
+    velocity: 10
+M1:
+  Ba_left:
+    ElevationAngle: 0.3839724354387525
+    velocity: 17.67
+  Ba_right:
+    ElevationAngle: 0.7853981633974483
+    velocity: 10
+  Bb:
+    ElevationAngle: 0.5410520681182421
+    velocity: 10
+  S_K1:
+    ElevationAngle: 0.52399
+    velocity: 10
+  S_K2:
+    ElevationAngle: 0.52399
+    velocity: 10
+  Sa1:
+    ElevationAngle: 0.52399
+    velocity: 10
+  Sa2:
+    ElevationAngle: 0.52399
+    velocity: 10
+  Sa3:
+    ElevationAngle: 0.52399
+    velocity: 10
+  Sb1:
+    ElevationAngle: 0.52399
+    velocity: 10
+  Sb2:
+    ElevationAngle: 0.52399
+    velocity: 10
+M2:
+  Ba_left:
+    ElevationAngle: 0.52399
+    velocity: 10
+  Ba_right:
+    ElevationAngle: 0.52399
+    velocity: 10
+  Bb:
+    ElevationAngle: 0.52399
+    velocity: 10
+  S_K1:
+    ElevationAngle: 0.52399
+    velocity: 10
+  S_K2:
+    ElevationAngle: 0.52399
+    velocity: 10
+  Sa1:
+    ElevationAngle: 0.3665191429188092
+    velocity: 10
+  Sa2:
+    ElevationAngle: 0.5934119456780721
+    velocity: 18.14
+  Sa3:
+    ElevationAngle: 0.7504915783575616
+    velocity: 11.43
+  Sb1:
+    ElevationAngle: 0.52399
+    velocity: 10
+  Sb2:
+    ElevationAngle: 0.7853981633974483
+    velocity: 11.13
+M3:
+  Ba_left:
+    velocity: 10
+  Ba_right:
+    velocity: 10
+  Bb:
+    velocity: 10
+  S_K1:
+    velocity: 10
+  S_K2:
+    velocity: 10
+  Sa1:
+    velocity: 10
+  Sa2:
+    velocity: 10
+  Sa3:
+    velocity: 10
+  Sb1:
+    velocity: 10
+  Sb2:
+    velocity: 10
+M4:
+  Ba_left:
+    velocity: 10
+  Ba_right:
+    velocity: 10
+  Bb:
+    velocity: 10
+  S_K1:
+    velocity: 10
+  S_K2:
+    velocity: 10
+  Sa1:
+    velocity: 10
+  Sa2:
+    velocity: 10
+  Sa3:
+    velocity: 10
+  Sb1:
+    velocity: 10
+  Sb2:
+    velocity: 10

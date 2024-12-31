@@ -1,0 +1,2 @@
+float32 ElevationAngle
+uint8 canid

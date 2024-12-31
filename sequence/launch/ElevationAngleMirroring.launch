@@ -1,0 +1,11 @@
+<launch>
+    <node name="ElevationAngleMirroring_node" pkg="sequence" type="ElevationAngleMirroring_node" output="screen">
+        <rosparam command="load" file="$(find sequence)/config/DynamicShootParam1.yaml" ns="DynamicShootParam1" />
+        <rosparam command="load" file="$(find sequence)/config/DynamicShootParam2.yaml" ns="DynamicShootParam2" />
+        <rosparam command="load" file="$(find sequence)/config/DynamicShootParam3.yaml" ns="DynamicShootParam3" />
+        <rosparam command="load" file="$(find sequence)/config/DynamicShootParam4.yaml" ns="DynamicShootParam4" />
+        <rosparam command="load" file="$(find sequence)/config/DynamicShootParam5.yaml" ns="DynamicShootParam5" />
+        <rosparam command="load" file="$(find sequence)/config/DynamicShootParam.yaml" ns="DynamicShootParam" />
+        <rosparam command="load" file="$(find sequence)/config/StaticShootParam.yaml"/>
+    </node>
+</launch>

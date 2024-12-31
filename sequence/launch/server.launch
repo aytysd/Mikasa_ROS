@@ -1,0 +1,10 @@
+<launch>
+    <arg name="red_zone" default="true"/>
+
+    <!-- <rosparam command="load" param="red_zone">
+        true
+    </rosparam> -->
+
+    <include file="$(find roswww)/launch/roswww.launch"/>
+    <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch" />
+</launch>

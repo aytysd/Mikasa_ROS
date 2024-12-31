@@ -1,0 +1,275 @@
+ayato{
+    margin-bottom: 10px;
+    background-color: aquamarine;
+    width: 100px;
+    height: 100px;
+}
+body{
+    /* background-image: url(../img/BackImage.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; */
+    background-color: black;
+}
+.parent{
+    width: 100px;
+    height: 100px;
+}
+
+
+.field{
+    position: relative;
+
+    width: 1000px;
+    height: 500px;
+}
+
+
+input#s1{
+    position: absolute;
+    top: 170%;
+    left: 21%;
+    accent-color: darkorange;
+}
+
+input#s2{
+    position: absolute;
+    top: 170%;
+    left: 40%;
+    accent-color: darkorange;
+}
+
+input#s3{
+    position: absolute;
+    top: 170%;
+    left: 58.5%;
+    accent-color: darkorange;
+}
+
+
+
+
+#upper{
+    position: absolute;
+    top: 116%;
+    left: 87%;
+    width: 10px;
+    height: 10px;
+    accent-color: darkorange;
+}
+
+#lower{
+    position: absolute;
+    top: 130%;
+    left: 87%;
+    width: 10px;
+    height: 10px;
+
+    accent-color: darkorange;
+}
+#fastest{
+    position: absolute;
+    top: 144%;
+    left: 87%;
+    width: 10px;
+    height: 10px;
+
+    accent-color: darkorange;
+}
+
+#red_zone{
+    position: absolute;
+    top: 187%;
+    left: 5%;
+    accent-color: darkorange;
+}
+
+#blue_zone{
+    position: absolute;
+    top: 187%;
+    left: 74%;
+    accent-color: darkorange;
+}
+
+input#spot1{
+    position: absolute;
+    left: 225px;
+    top: 150px;
+    width: 10px; 
+    height: 10px;
+    padding: 5px;
+    line-height: 0px;
+    accent-color: darkorange;
+    background-color: lightgray;
+    display: block;
+    color: black;
+}
+input#spot2{
+    position: absolute;
+    left: 525px;
+    top: 150px;
+    width: 10px; 
+    height: 10px;
+    padding: 5px;
+    line-height: 0px;
+    accent-color: darkorange;
+    background-color: lightgray;
+    display: block;
+    color: black;
+}
+input#spot3{
+    position: absolute;
+    left: 825px;
+    top: 150px;
+    width: 10px; 
+    height: 10px;
+    padding: 5px;
+    line-height: 0px;
+    accent-color: darkorange;
+    background-color: lightgray;
+    display: block;
+    color: black;
+}
+
+.field btn{
+    position: absolute;
+    color: black;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 100px;
+    background: skyblue;
+
+}
+
+
+
+.field img{
+    width: 800px;
+    height:1000px;
+}
+
+
+input#btn{
+    width: 200px;
+    height: 80px;
+    position: absolute;
+    top: 88%;
+    left: 55%;
+}
+
+input#stop{
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    top: 60%;
+    left: 110%;
+}
+input#parameter1{
+    position: absolute;
+    left: 5%;
+    width: 90%;
+}
+input#parameter2
+{
+    position: absolute;
+    left: 5%;
+    width: 90%;
+}
+
+.font{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+    
+}
+
+
+#param{
+    position: absolute;
+    top: 5%;
+    left: 0%;
+    color: white;
+    width: 1500px;
+    height: 852px;
+
+    margin-bottom: 10px;
+    border: 10px double white;
+    border-radius: 10px;
+}
+
+#state{
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#start_zone{
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
+}
+
+#machine{
+    z-index: 0;
+    position: absolute;
+    top: 125px;
+    left: 1420px;
+    width: 405px;
+    height: 335px;
+}
+
+
+#number{
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+#select{
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#joystic{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: larger;
+    position:absolute;
+    width: 80px;
+    height: 80px;
+}
+#ui_Speed{
+    color: white;
+}
+#ui_AttitudeAngle{
+    color: white;
+}
+.moveaction{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+    accent-color: cyan;
+
+}
+#square{
+    position: absolute;
+    top: 148%;
+    left: 110%;
+    width: 250px;
+    height: 80px;
+    background-color: black;
+    border: 2px solid white;
+}
+#controller{
+    z-index: 0;
+    position: absolute;
+    top: 10px;
+    left: 1050px;
+    width: 400px;
+    height: 300px;
+}
+
+.saveload{
+    width: 200px;
+    height: 80px;
+}
+
+.odom{
+    position: absolute;
+    accent-color: yellow;
+}

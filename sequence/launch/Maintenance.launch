@@ -1,0 +1,25 @@
+<launch>
+    <include file="$(find stm32interface)/launch/stm32interface.launch">
+        <arg name="red_zone" value="true"/>
+        <arg name="sim" value="false"/>
+    </include>
+
+    <include file="$(find sequence)/launch/server.launch"/>
+    <include file="$(find sequence)/launch/LRF.launch"/>
+
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find sequence)/rviz/Maintenance.rviz" required="true"/>
+
+    <node name="tf_repeater_node" pkg="sequence" type="tf_repeater_node">
+        <rosparam command="load" file="$(find sequence)/config/LRF/red_zone_amcl.yaml" subst_value="true"/>
+    </node>    
+
+
+    <rosparam command="load" file="$(find sequence)/config/DynamicShootParam1.yaml" ns="shoot_spot_node/DynamicShootParam1" />
+    <rosparam command="load" file="$(find sequence)/config/DynamicShootParam2.yaml" ns="shoot_spot_node/DynamicShootParam2" />
+    <rosparam command="load" file="$(find sequence)/config/DynamicShootParam3.yaml" ns="shoot_spot_node/DynamicShootParam3" />
+    <rosparam command="load" file="$(find sequence)/config/DynamicShootParam4.yaml" ns="shoot_spot_node/DynamicShootParam4" />
+    <rosparam command="load" file="$(find sequence)/config/DynamicShootParam5.yaml" ns="shoot_spot_node/DynamicShootParam5" />
+    <rosparam command="load" file="$(find sequence)/config/DynamicShootParam.yaml" ns="shoot_spot_node/DynamicShootParam" />
+    <rosparam command="load" file="$(find sequence)/config/StaticShootParam.yaml" ns="shoot_spot_node"/>
+
+</launch>

@@ -1,0 +1,22 @@
+map_upgrade_interval: 1.0
+transform_publish_period: 0.5
+temporalUpdate: 1.0
+
+linear_update: 0.1
+angular_update: 0.1
+
+xmin: -0.5
+xmax: 11.0
+ymin: -0.5
+ymax: 3
+
+srt: 0
+stt: 0
+
+astep: 0
+
+minimumScore: 50
+
+lskip: 30
+
+throttle_scans: 5

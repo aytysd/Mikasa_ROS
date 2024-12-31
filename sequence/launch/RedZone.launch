@@ -1,0 +1,100 @@
+<launch>
+
+    <arg name="sim" value="false"/>
+    <arg name="red_zone" default="true"/>
+
+    <rosparam command="load" param="red_zone">
+        true
+    </rosparam>
+
+    <group if="$(arg sim)">
+        <node name="ros_tcp_endpoint" pkg="ros_tcp_endpoint" type="default_server_endpoint.py"/>
+    </group>
+
+    <node name="Movement_node" pkg="sequence" type="movement_node" output="screen">
+        <rosparam command="load" file="$(find sequence)/config/Machine.yaml"/>
+        <param name="red_zone" value="$(arg red_zone)"/>
+    </node>
+
+
+    <group if="$(arg red_zone)">
+        <node name="Retry_node" pkg="sequence" type="retry_node">
+            <rosparam command="load" file="$(find sequence)/config/LRF/red_zone_amcl.yaml" subst_value="true"/>
+        </node>
+    </group>
+
+    <group unless="$(arg red_zone)">
+        <node name="Retry_node" pkg="sequence" type="retry_node">
+            <rosparam command="load" file="$(find sequence)/config/LRF/blue_zone_amcl.yaml" subst_value="true"/>
+        </node>        
+    </group>
+
+
+
+    <node name="shoot_spot_node" pkg="sequence" type="shoot_spot_node" output="screen">
+        <rosparam command="load" file="$(find sequence)/config/DynamicShootParam1.yaml" ns="DynamicShootParam1" />
+        <rosparam command="load" file="$(find sequence)/config/DynamicShootParam2.yaml" ns="DynamicShootParam2" />
+        <rosparam command="load" file="$(find sequence)/config/DynamicShootParam3.yaml" ns="DynamicShootParam3" />
+        <rosparam command="load" file="$(find sequence)/config/DynamicShootParam4.yaml" ns="DynamicShootParam4" />
+        <rosparam command="load" file="$(find sequence)/config/DynamicShootParam5.yaml" ns="DynamicShootParam5" />
+        <rosparam command="load" file="$(find sequence)/config/DynamicShootParam.yaml" ns="DynamicShootParam" />
+        <rosparam command="load" file="$(find sequence)/config/StaticShootParam.yaml"/>
+        <param name="sim" value="$(arg sim)" />
+    </node>
+
+    <group if="$(arg red_zone)">
+        <node name="tf_repeater_node" pkg="sequence" type="tf_repeater_node">
+            <rosparam command="load" file="$(find sequence)/config/LRF/red_zone_amcl.yaml" subst_value="true"/>
+        </node>    
+    </group>
+
+    <group unless="$(arg red_zone)">
+        <node name="tf_repeater_node" pkg="sequence" type="tf_repeater_node">
+            <rosparam command="load" file="$(find sequence)/config/LRF/blue_zone_amcl.yaml" subst_value="true"/>
+        </node>
+    
+    </group>
+
+
+    <node name="simple_route_planner" pkg="simple_route_planner" type="main.py"/>
+
+    <include file="$(find pure_pursuit)/launch/pure_pursuit.launch"/>
+    <include file="$(find stm32interface)/launch/stm32interface.launch">
+        <arg name="red_zone" value="$(arg red_zone)"/>
+        <arg name="sim" value="$(arg sim)"/>
+    </include>
+    
+    <group if="$(arg sim)">
+        <include file="$(find timed_roslaunch)/launch/timed_roslaunch.launch">
+            <arg name="time" value="3"/>
+            <arg name="pkg" value="sequence"/>
+            <arg name="file" value="ros_amcl_for_prog.launch"/>
+            <arg name="value" value="red_zone:=$(arg red_zone)"/>
+        </include>
+
+        <!-- <include file="$(find sequence)/launch/ros_amcl_for_prog.launch">
+            <arg name="red_zone" value="$(arg red_zone)"/>
+        </include> -->
+    </group>
+    
+    <group unless="$(arg sim)">
+
+        <include file="$(find timed_roslaunch)/launch/timed_roslaunch.launch">
+            <arg name="time" value="3"/>
+            <arg name="pkg" value="sequence"/>
+            <arg name="file" value="ros_amcl.launch"/>
+            <arg name="value" value="red_zone:=$(arg red_zone)"/>
+        </include>
+
+        <!-- <include file="$(find sequence)/launch/ros_amcl.launch">
+            <arg name="red_zone" value="$(arg red_zone)"/>
+        </include> -->
+    </group>
+
+    <include file="$(find sequence)/launch/server.launch"/>
+
+    <include file="$(find sequence)/launch/GUI.launch"/>
+
+
+
+</launch>

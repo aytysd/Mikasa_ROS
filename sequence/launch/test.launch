@@ -1,0 +1,45 @@
+<launch>
+    <!-- <node name="shoot_spot_node" pkg="sequence" type="shoot_spot_node" output="screen">
+        <rosparam command="load" file="$(find sequence)/config/DynamicShootParam.yaml"/>
+        <rosparam command="load" file="$(find sequence)/config/StaticShootParam.yaml"/>
+    </node> -->
+    <!-- <node name="Movement_node" pkg="sequence" type="movement_node" output="screen">
+        <rosparam command="load" file="$(find sequence)/config/Machine.yaml"/>
+        <param name="red_zone" value="true"/>
+    </node> -->
+
+    <node name="shoot_spot_node" pkg="sequence" type="shoot_spot_node" output="screen">
+        <rosparam command="load" file="$(find sequence)/config/DynamicShootParam1.yaml" ns="DynamicShootParam1" />
+        <rosparam command="load" file="$(find sequence)/config/DynamicShootParam2.yaml" ns="DynamicShootParam2" />
+        <rosparam command="load" file="$(find sequence)/config/DynamicShootParam3.yaml" ns="DynamicShootParam3" />
+        <rosparam command="load" file="$(find sequence)/config/DynamicShootParam4.yaml" ns="DynamicShootParam4" />
+        <rosparam command="load" file="$(find sequence)/config/DynamicShootParam5.yaml" ns="DynamicShootParam5" />
+        <rosparam command="load" file="$(find sequence)/config/DynamicShootParam.yaml" ns="DynamicShootParam" />
+        <rosparam command="load" file="$(find sequence)/config/StaticShootParam.yaml"/>
+        <param name="sim" value="false" />
+    </node>
+
+
+        <!-- <node name="Retry_node" pkg="sequence" type="retry_node">
+            <rosparam command="load" file="$(find sequence)/config/LRF/red_zone_amcl.yaml" subst_value="true"/>
+        </node>
+
+    <include file="$(find stm32interface)/launch/stm32interface.launch">
+        <arg name="red_zone" value="true"/>
+        <arg name="sim" value="true"/>
+    </include> -->
+
+    
+    <!-- <include file="$(find roswww)/launch/roswww.launch"/>
+    <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch" /> -->
+
+    <!-- <node name="tf_repeater_node" pkg="sequence" type="tf_repeater_node">
+        <rosparam command="load" file="$(find sequence)/config/LRF/red_zone_amcl.yaml" subst_value="true"/>
+    </node>     -->
+
+    
+    <!-- <node name="reconfigure" pkg="rqt_reconfigure" type="rqt_reconfigure"/> -->
+
+    <!-- <include file="$(find stm32interface)/launch/stm32interface.launch"/> -->
+
+</launch>

@@ -1,0 +1,31 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/ayato/catkin_ws/devel/lib/python3/dist-packages",
+        "/opt/ros/noetic/lib/python3/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/ayato/catkin_ws/devel/lib/python3/dist-packages",
+        "/opt/ros/noetic/lib/python3/dist-packages"
+    ],
+    "files.associations": {
+        "condition_variable": "cpp",
+        "type_traits": "cpp",
+        "iostream": "cpp",
+        "cstddef": "cpp",
+        "limits": "cpp",
+        "*.tcc": "cpp",
+        "bitset": "cpp",
+        "memory_resource": "cpp",
+        "numeric": "cpp",
+        "random": "cpp",
+        "ratio": "cpp",
+        "shared_mutex": "cpp",
+        "cmath": "cpp",
+        "functional": "cpp",
+        "tuple": "cpp",
+        "typeinfo": "cpp",
+        "variant": "cpp",
+        "memory": "cpp",
+        "core": "cpp"
+    }
+}

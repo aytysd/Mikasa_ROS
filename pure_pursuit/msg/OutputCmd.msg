@@ -1,0 +1,4 @@
+std_msgs/Float32 DirectionOfTravel
+std_msgs/Float32 Speed
+std_msgs/Float32 AngularVelocity
+std_msgs/Float32 AttitudeAngle

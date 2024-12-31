@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<launch>
+
+    <arg name="red_zone" default="true"/>
+    <arg name="sim" default="false"/>
+
+    <group if="$(arg red_zone)">
+        <node name="CAN1" pkg="stm32interface" type="CAN1_node" respawn="true">
+            <remap from="/joy" to="/web/joy"/>
+            <param name="speed_limit" value="1.0"/>
+            <param name="DeviceName" value="/dev/CANUSB1"/>
+            <rosparam command="load" file="$(find sequence)/config/LRF/red_zone_amcl.yaml" subst_value="true"/>
+        </node>
+    </group>
+
+    <group unless="$(arg red_zone)">
+        <node name="CAN1" pkg="stm32interface" type="CAN1_node" respawn="true">
+            <remap from="/joy" to="/web/joy"/>
+            <param name="speed_limit" value="1.0"/>
+            <param name="DeviceName" value="/dev/CANUSB1"/>
+            <rosparam command="load" file="$(find sequence)/config/LRF/blue_zone_amcl.yaml" subst_value="true"/>
+        </node>
+        
+    </group>
+
+    <group if="$(arg red_zone)">
+        <node name="CAN2" pkg="stm32interface" type="CAN2_node" respawn="true">
+            <param name="DeviceName" value="/dev/CANUSB2"/>
+            <rosparam command="load" file="$(find sequence)/config/LRF/red_zone_amcl.yaml" subst_value="true"/>
+        </node>
+    </group>
+
+    <group unless="$(arg red_zone)">
+        <node name="CAN2" pkg="stm32interface" type="CAN2_node" respawn="true">
+            <param name="DeviceName" value="/dev/CANUSB2"/>
+            <rosparam command="load" file="$(find sequence)/config/LRF/blue_zone_amcl.yaml" subst_value="true"/>
+        </node>
+    
+    </group>
+
+    <node name="serial_handler" pkg="stm32interface" type="serial_node">
+        <rosparam command="load" file="$(find stm32interface)/config/Serial.yaml"/>
+        <param name="sim" value="$(arg sim)"/>
+    </node>
+
+
+    <!-- <include file="$(find sequence)/launch/server.launch"/> -->
+
+
+    <!-- <node name="reconfigure" pkg="rqt_reconfigure" type="rqt_reconfigure"/> -->
+
+
+    <!-- <node name="rqt_runtime_monitor" pkg="rqt_runtime_monitor" type="rqt_runtime_monitor"/> -->
+</launch>

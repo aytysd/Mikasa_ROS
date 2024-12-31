@@ -1,0 +1,22 @@
+M0:
+  fire: false
+  where: 'Bb'
+
+
+M1:
+  fire: false
+  where: 'Sa1'
+
+M2:
+  fire: false  
+  where: 'Sa1'
+
+M3:
+  fire: false
+  where: 'Sa1'
+  SteeringDev: 0
+
+M4:
+  fire: false
+  where: 'Sa1'
+  SteeringDev: 0

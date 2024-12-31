@@ -1,0 +1,3 @@
+<launch>
+    <node name="simple_route_planner" pkg="simple_route_planner" type="main.py"/>
+</launch>

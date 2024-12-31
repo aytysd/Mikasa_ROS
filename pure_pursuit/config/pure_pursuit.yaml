@@ -1,0 +1,8 @@
+K: 0.1
+RotateP: 3.75
+RotateI: 0.3
+RotateD: 0.0
+# RotateP: 0.5
+# RotateI: 0.0
+# RotateD: 0.1
+ApproachBeginningDistance: 0.1

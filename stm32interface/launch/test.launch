@@ -1,0 +1,10 @@
+<launch>
+    <node name="shoot_spot_node" pkg="sequence" type="shoot_spot_node" output="screen">
+        <rosparam command="load" file="$(find sequence)/config/ShootParam.yaml" ns="ShootParam/" />
+    </node>
+
+    <node name="reconfigure" pkg="rqt_reconfigure" type="rqt_reconfigure"/>
+
+    <include file="$(find stm32interface)/launch/stm32interface.launch"/>
+
+</launch>

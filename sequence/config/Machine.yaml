@@ -1,0 +1,12 @@
+Self:
+  Length: 0.712
+  DefaultSelfPos:
+    x: 0.3
+    y: 0.3
+    theta: 0.0
+Opponent:
+  Length: 1.2
+  DefaultSelfPos:
+    x: 12
+    y: 12
+    theta: 0.0

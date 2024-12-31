@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<launch>
+
+    <arg name="red_zone" default="true"/>
+
+    <node pkg="map_server" type="map_server" name="map_server" args="$(find sequence)/resources/map2.yaml"/> 
+
+
+    <group if="$(arg red_zone)">
+        <node pkg="amcl" type="amcl" name="amcl">
+            <remap from="/scan" to="/scan_filtered"/>
+            <rosparam command="load" file="$(find sequence)/config/LRF/red_zone_amcl.yaml" subst_value="true"/>
+        </node>
+    </group>
+
+    <group unless="$(arg red_zone)">
+        <node pkg="amcl" type="amcl" name="amcl">
+            <rosparam command="load" file="$(find sequence)/config/LRF/blue_zone_amcl.yaml" subst_value="true"/>
+            <remap from="/scan" to="/scan_filtered"/>
+        </node>
+    </group>
+
+
+</launch>
+                    

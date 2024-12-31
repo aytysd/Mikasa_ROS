@@ -1,0 +1,7 @@
+# goal
+std_msgs/UInt8_t CannonNum[]
+std_msgs/Float32 Velocity[]
+---
+# result
+---
+# feedback

@@ -1,0 +1,123 @@
+M0:
+  Ba_left:
+    ElevationAngle: 0.52399
+    velocity: 10
+    SteeringDev: 0
+  Ba_right:
+    ElevationAngle: 0.5061454830783556
+    velocity: 10
+    SteeringDev: 0
+  Bb:
+    ElevationAngle: 0.7853981633974483
+    velocity: 10
+    SteeringDev: 0
+  S_K1:
+    ElevationAngle: 0.52399
+    velocity: 10
+    SteeringDev: 0
+  S_K2:
+    ElevationAngle: 0.52399
+    velocity: 10
+    SteeringDev: 0
+  Sa1:
+    ElevationAngle: 0.52399
+    velocity: 10
+    SteeringDev: 0
+  Sa2:
+    ElevationAngle: 0.715584993317675
+    velocity: 10
+    SteeringDev: 0
+  Sa3:
+    ElevationAngle: 0.52399
+    velocity: 10
+    SteeringDev: 0
+  Sb1:
+    ElevationAngle: 0.52399
+    velocity: 10
+    SteeringDev: 0
+  Sb2:
+    ElevationAngle: 0.52399
+    velocity: 10
+    SteeringDev: 0
+M1:
+  Ba_left:
+    ElevationAngle: 0.52399
+    velocity: 10
+    SteeringDev: 0
+  Ba_right:
+    ElevationAngle: 0.6981317007977318
+    velocity: 15.650000000000002
+    SteeringDev: 0
+  Bb:
+    ElevationAngle: 0.5061454830783556
+    velocity: 10
+    SteeringDev: 0
+  S_K1:
+    ElevationAngle: 0.52399
+    velocity: 10
+    SteeringDev: 0
+  S_K2:
+    ElevationAngle: 0.52399
+    velocity: 10
+    SteeringDev: 0
+  Sa1:
+    ElevationAngle: 0.52399
+    velocity: 10
+    SteeringDev: 0
+  Sa2:
+    ElevationAngle: 0.52399
+    velocity: 10
+    SteeringDev: 0
+  Sa3:
+    ElevationAngle: 0.52399
+    velocity: 10
+    SteeringDev: 0
+  Sb1:
+    ElevationAngle: 0.52399
+    velocity: 10
+    SteeringDev: 0
+  Sb2:
+    ElevationAngle: 0.52399
+    velocity: 10
+    SteeringDev: 0
+M2:
+  Ba_left:
+    ElevationAngle: 0.52399
+    velocity: 10
+    SteeringDev: 0
+  Ba_right:
+    ElevationAngle: 0.5061454830783556
+    velocity: 10
+    SteeringDev: 0
+  Bb:
+    ElevationAngle: 0.5061454830783556
+    velocity: 10
+    SteeringDev: 0
+  S_K1:
+    ElevationAngle: 0.52399
+    velocity: 10
+    SteeringDev: 0
+  S_K2:
+    ElevationAngle: 0.5585053606381855
+    velocity: 16.9
+    SteeringDev: 0
+  Sa1:
+    ElevationAngle: 0.52399
+    velocity: 10
+    SteeringDev: 0
+  Sa2:
+    ElevationAngle: 0.52399
+    velocity: 10
+    SteeringDev: 0
+  Sa3:
+    ElevationAngle: 0.5585053606381855
+    velocity: 7.59
+    SteeringDev: 0
+  Sb1:
+    ElevationAngle: 0.52399
+    velocity: 10
+    SteeringDev: 0
+  Sb2:
+    ElevationAngle: 0.6457718232379019
+    velocity: 10
+    SteeringDev: 0

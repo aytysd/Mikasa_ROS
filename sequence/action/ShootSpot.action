@@ -1,0 +1,5 @@
+geometry_msgs/Pose2D SelfPos
+uint8 ShootSpot
+bool AutoAiming
+---
+---

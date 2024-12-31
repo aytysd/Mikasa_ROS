@@ -1,0 +1,23 @@
+clear;
+sub = rossubscriber("/Speed","std_msgs/Float32", @callback, "DataFormat","struct")
+
+
+global speed
+global count
+global count_array
+
+function callback( obj, msg, src )
+    global speed
+    data = msg.Data
+    speed = [speed data]
+
+    global count
+    global count_array
+
+%     count_array = [ count_array count ]
+    count = count + 1
+
+%     plot( s                peed, count_array )
+
+    disp( "receiveid" )
+end

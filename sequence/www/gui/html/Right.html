@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<link rel="stylesheet" type="text/css" href="../css/StyleShootDown.css"/>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+        <style type="text/css">
+        <!--
+        *{ padding:0px; margin:0px;}
+        -->
+        </style>
+        <title>ShootDown(R)</title>
+        </head>
+
+    <body>
+        <script type="text/javascript" src="/sequence/gui/ROS/eventemitter2.min.js"></script>
+        <script type="text/javascript" src="/sequence/gui/ROS/roslib.min.js"></script>
+
+        <script type="text/javascript" src="/sequence/gui/js/Right/Instances.js"></script>
+        <script type="text/javascript" src="/sequence/gui/js/Right/M2/ROS.js"></script>
+        <script type="text/javascript" src="/sequence/gui/js/Right/M4/ROS.js"></script>
+
+        <script type="text/javascript" src="/sequence/gui/js/Right/GamePad.js"></script>
+        <script type="text/javascript" src="/sequence/gui/js/Right/ROS.js"></script>
+        <script type="text/javascript" src="/sequence/gui/js/Right/utils.js"></script>    
+        <script type="text/javascript" src="/sequence/gui/js/Right/Definition.js"></script>
+        <script type="text/javascript" src="/sequence/gui/js/Right/SticksAction.js"></script>
+        <script type="text/javascript" src="/sequence/gui/js/Right/ButtonsAction.js"></script>
+
+        <script type="text/javascript" src="/sequence/gui/js/Right/M2/ButtonsAction.js"></script>
+        <script type="text/javascript" src="/sequence/gui/js/Right/M2/ElevationAngleController.js"></script>
+        <script type="text/javascript" src="/sequence/gui/js/Right/M2/FireStatusController.js"></script>
+        <script type="text/javascript" src="/sequence/gui/js/Right/M2/ShootSpeedController.js"></script>
+        <script type="text/javascript" src="/sequence/gui/js/Right/M2/SteeringAngleController.js"></script>    
+        <script type="text/javascript" src="/sequence/gui/js/Right/M2/TargetSpotController.js"></script>    
+        <script type="text/javascript" src="/sequence/gui/js/Right/M2/SticksAction.js"></script>    
+        <script type="text/javascript" src="/sequence/gui/js/Right/M2/Updater.js"></script>
+
+        <script type="text/javascript" src="/sequence/gui/js/Right/M4/ButtonsAction.js"></script>
+        <script type="text/javascript" src="/sequence/gui/js/Right/M4/FireStatusController.js"></script>
+        <script type="text/javascript" src="/sequence/gui/js/Right/M4/ShootSpeedController.js"></script>
+        <script type="text/javascript" src="/sequence/gui/js/Right/M4/SteeringAngleController.js"></script>    
+        <script type="text/javascript" src="/sequence/gui/js/Right/M4/SticksAction.js"></script>    
+        <script type="text/javascript" src="/sequence/gui/js/Right/M4/TargetSpotController.js"></script>    
+        <script type="text/javascript" src="/sequence/gui/js/Right/M4/Updater.js"></script>
+
+
+        <div id = "param_right">
+            <h2 class="font">[SHOOT]</h2>
+            <h3 class="font">shoot status: <label id="shoot_status_shoot" style="color: red;">停止中</label></h3>
+            <h3 class="font">操舵角: <label id="angle_status_shoot">0</label></h3>
+            <h3 class="font">速度: <label id="speed_status_shoot">22</label></h3>
+            <h3 class="font" style="position: absolute; top: 6%;left: 70%;">現在地: <label id = "position_now">a</label></h3>
+            <input type="range" id="shoot_speed" min="4000" max="27000" step="100" value="8000" style="width: 60%;position: absolute;top: 22.5%;left: 30%; " disabled>
+
+            <h3 class="font" style="position: absolute;top: 12%;left: 50%;">仰角:<label id = "ElevationAngle_shoot">22</label></h3>
+
+            <br>
+            <input type="radio" id = "target1_shoot" class="target1" name ="target_shoot" size=1  style="transform: scale(4.0);top: 30%;" onclick="javascript:M2.TargetSpotController.SetShootSpotChecked(0);" checked /> 
+            <input type="radio" id = "target2_shoot" class="target2" name ="target_shoot" size=1  style="transform: scale(4.0);top: 30%;" onclick="javascript:M2.TargetSpotController.SetShootSpotChecked(1);"/> 
+            <input type="radio" id = "target3_shoot" class="target3" name ="target_shoot" size=1  style="transform: scale(4.0);top: 30%;" onclick="javascript:M2.TargetSpotController.SetShootSpotChecked(2);"/> 
+            <input type="radio" id = "target4_shoot" class="target4" name ="target_shoot" size=1  style="transform: scale(4.0);top: 30%;" onclick="javascript:M2.TargetSpotController.SetShootSpotChecked(3);"/> 
+            <input type="radio" id = "target5_shoot" class="target5" name ="target_shoot" size=1  style="transform: scale(4.0);top: 30%;" onclick="javascript:M2.TargetSpotController.SetShootSpotChecked(4);"/> 
+
+            <input type="radio" id = "target6_shoot" class="target1" name ="target_shoot" size=1  style="transform: scale(4.0);top: 55%;" onclick="javascript:M2.TargetSpotController.SetShootSpotChecked(5);"/> 
+            <input type="radio" id = "target7_shoot" class="target2" name ="target_shoot" size=1  style="transform: scale(4.0);top: 55%;" onclick="javascript:M2.TargetSpotController.SetShootSpotChecked(6);"/> 
+            <input type="radio" id = "target8_shoot" class="target3" name ="target_shoot" size=1  style="transform: scale(4.0);top: 55%;" onclick="javascript:M2.TargetSpotController.SetShootSpotChecked(7);"/> 
+            <input type="radio" id = "target9_shoot" class="target4" name ="target_shoot" size=1  style="transform: scale(4.0);top: 55%;" onclick="javascript:M2.TargetSpotController.SetShootSpotChecked(8);"/> 
+
+            <br>
+            <br>
+            <div>
+                <input type="button" id="SelectButton1_shoot" value="-" style="position: absolute;width: 18%; height: 16%;left: 5%;top: 35%;font-size: 20px;"onclick="javascript:M2.TargetSpotController.SetShootSpotChecked(0);">
+                <input type="button" id="SelectButton2_shoot" value="-" style="position: absolute;width: 18%; height: 16%;left: 23%;top: 35%;font-size: 20px;"onclick="javascript:M2.TargetSpotController.SetShootSpotChecked(1);">
+                <input type="button" id="SelectButton3_shoot" value="-" style="position: absolute;width: 18%; height: 16%;left: 41%;top: 35%;font-size: 20px;"onclick="javascript:M2.TargetSpotController.SetShootSpotChecked(2);">
+                <input type="button" id="SelectButton4_shoot" value="-" style="position: absolute;width: 18%; height: 16%;left: 59%;top: 35%;font-size: 20px;"onclick="javascript:M2.TargetSpotController.SetShootSpotChecked(3);">
+                <input type="button" id="SelectButton5_shoot" value="-" style="position: absolute;width: 18%; height: 16%;left: 77%;top: 35%;font-size: 20px;"onclick="javascript:M2.TargetSpotController.SetShootSpotChecked(4);">
+
+                <input type="button" id="SelectButton6_shoot" value="-" style="position: absolute;width: 18%; height: 16%;left: 5%;top: 60%;font-size: 20px;"onclick="javascript:M2.TargetSpotController.SetShootSpotChecked(5);">
+                <input type="button" id="SelectButton7_shoot" value="-" style="position: absolute;width: 18%; height: 16%;left: 23%;top: 60%;font-size: 20px;"onclick="javascript:M2.TargetSpotController.SetShootSpotChecked(6);">
+                <input type="button" id="SelectButton8_shoot" value="-" style="position: absolute;width: 18%; height: 16%;left: 41%;top: 60%;font-size: 20px;"onclick="javascript:M2.TargetSpotController.SetShootSpotChecked(7);">
+                <input type="button" id="SelectButton9_shoot" value="-" style="position: absolute;width: 18%; height: 16%;left: 59%;top: 60%;font-size: 20px;"onclick="javascript:M2.TargetSpotController.SetShootSpotChecked(8);">
+
+                </div>
+            <input type="button" id="fire_button_shoot" value="FIRE" style="position: absolute;width: 60%; height: 20%;top: 78%;left: 5%; background-color: red; font-size: 50px;"onclick="javascript:M2.FireStatusController.ToggleFireStatus();"  >
+        </div>
+        <div id = "param_left">
+            <h2 class="font">[RIGHT SHOOT DOWN]</h2>
+            <h3 class="font">shoot status: <label id="shoot_status_shootdown"style="color: red;">停止中</label></h3>
+            <h3 class="font">操舵角: <label id="angle_status_shootdown">0</label></h3>
+            <h3 class="font">速度: <label id="speed_status_shootdown">0</label></h3>
+
+            <input type="range" id="shootdown_speed" min="8000" max="27000" step="100" value="8000" style="width: 60%; position: absolute;top: 22.5%;left: 30%;" disabled>
+
+            <input type="radio" id = "target1_shootdown" class="target1" name ="target_shootdown" size=1  style="transform: scale(4.0);top: 30%;" onclick="javascript:M4.TargetSpotController.SetShootSpotChecked(0);" checked /> 
+            <input type="radio" id = "target2_shootdown" class="target2" name ="target_shootdown" size=1  style="transform: scale(4.0);top: 30%;"onclick="javascript:M4.TargetSpotController.SetShootSpotChecked(1);" /> 
+            <input type="radio" id = "target3_shootdown" class="target3" name ="target_shootdown" size=1  style="transform: scale(4.0);top: 30%;"onclick="javascript:M4.TargetSpotController.SetShootSpotChecked(2);" /> 
+
+            <div>
+            <input type="button" id="SelectButton1_shootdown" value="A1" style="position: absolute;width: 30%; height: 35%;left: 5%;top: 35%; font-size: 50px;"onclick="javascript:M4.TargetSpotController.SetShootSpotChecked(0);"  >
+            <input type="button" id="SelectButton2_shootdown" value="A2" style="position: absolute;width: 30%; height: 35%;left: 35%;top: 35%;font-size: 50px;"onclick="javascript:M4.TargetSpotController.SetShootSpotChecked(1);" >
+            <input type="button" id="SelectButton3_shootdown" value="A3" style="position: absolute;width: 30%; height: 35%;left: 65%;top: 35%;font-size: 50px;"onclick="javascript:M4.TargetSpotController.SetShootSpotChecked(2);" >
+            </div>
+            <input type="button" id="fire_button_shootdown" value="FIRE" style="position: absolute;width: 60%; height: 20%;top: 78%;left: 5%; background-color: red; font-size: 50px;"onclick="javascript:M4.FireStatusController.ToggleFireStatus();"  >
+        </div>
+        <div style="position: absolute;left: 40%;top: 60%; height: 60%;width: 30%;">
+            <img src="../img/controller.png" style="position: absolute;width: 80%; height: 60%; left: 3%;">
+
+            <img src="../img/controller_off.png" title="state" alt="controller_state" id = "menu_button" style="position:absolute; top: 15%;left: 38%; width: 10%;height: 10%;">
+
+            <img src="../img/controller_off.png" title="state" alt="controller_state" id = "A_button" style="position:absolute; top: 21%;left: 58.5%; width: 6%;height: 6%;">
+            <img src="../img/controller_off.png" title="state" alt="controller_state" id = "B_button" style="position:absolute; top: 16%;left: 63%; width: 6%;height: 6%;">
+            <img src="../img/controller_off.png" title="state" alt="controller_state" id = "X_button" style="position:absolute; top: 16%;left: 53.5%; width: 6%;height: 6%;">
+            <img src="../img/controller_off.png" title="state" alt="controller_state" id = "Y_button" style="position:absolute; top: 12%;left: 58.5%; width: 6%;height: 6%;">
+
+            <img src="../img/cross_off.png" title="state" alt="controller_state" id = "cross_up" style="position:absolute; top: 12.5%;left: 21.5%; width: 6%;height: 6%;">
+            <img src="../img/cross_off.png" title="state" alt="controller_state" id = "cross_down" style="position:absolute; top: 21%;left: 21.5%; width: 6%;height: 6%;">
+            <img src="../img/cross_off.png" title="state" alt="controller_state" id = "cross_left" style="position:absolute; top: 16.8%;left: 17%; width: 6%;height: 6%;">
+            <img src="../img/cross_off.png" title="state" alt="controller_state" id = "cross_right" style="position:absolute; top: 16.8%;left: 26%; width: 6%;height: 6%;">
+
+            <img src="../img/cross_off.png" title="state" alt="controller_state" id = "L1" style="position:absolute; top: 41.8%;left: 26.5%; width: 16%;height: 8%;">
+            <img src="../img/cross_off.png" title="state" alt="controller_state" id = "L2" style="position:absolute; top: 50.8%;left: 26.5%; width: 16%;height: 8%;">
+            <img src="../img/cross_off.png" title="state" alt="controller_state" id = "R1" style="position:absolute; top: 41.8%;left: 43%; width: 16%;height: 8%;">
+            <img src="../img/cross_off.png" title="state" alt="controller_state" id = "R2" style="position:absolute; top: 50.8%;left: 43%; width: 16%;height: 8%;">
+
+            <img src ="../img/controller_off.png" title="state" alt="controller_state" id="joy_stick1" style="position:absolute; top: 26.5%;left: 27.8%; width: 10%;height: 10%;">
+            <img src ="../img/controller_off.png" title="state" alt="controller_state" id="joy_stick2" style="position:absolute; top: 26.5%;left: 48%; width: 10%;height: 10%;">
+
+        </div>
+        <div style="position: absolute;left: 43%;top: 5%; width: 25%;">
+            <h3 class= "font">RosBridge status: <label id='rosbridge_status'>Disconnect</label></h3>
+            <h3 class= "font">GamePad status: <label id='gamepad_status'>Disconnect</label></h3>
+            <h4 class="font">serial_handler：<label class="font" id = "serial_handler">-</label></h4>
+            <h4 class="font">CAN1 : <label class="font" id = "can1">-</label></h4>
+            <h4 class="font">CAN2 : <label class="font" id = "can2">-</label></h4>
+            <h4 class="font">amcl : <label class="font" id = "amcl">-</label></h4>
+            <h4 class="font">scan_right : <label class="font" id = "scan_right">-</label></h4>
+            <h4 class="font">scan_left : <label class="font" id = "scan_left">-</label></h4>
+
+        </div>
+    
+        <script type="text/javascript" src="/sequence/gui/js/Right/Initialize.js"></script>
+
+    </body>
+</html>

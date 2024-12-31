@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<launch>
+
+    <arg name="single" default="false"/>
+    <arg name="LeftEnabled" default="true"/>
+    <arg name="RightEnabled" default="true"/>
+
+    <arg name="red_zone" default="true"/>
+
+    <include file="$(find sequence)/launch/LRF.launch">
+        <arg name="LeftEnabled" value="$(arg LeftEnabled)"/>
+        <arg name="RightEnabled" value="$(arg RightEnabled)"/>
+        <arg name="single" value="$(arg single)"/>
+    </include>
+
+
+    <node pkg="map_server" type="map_server" name="map_server" args="$(find sequence)/resources/map2.yaml"/> 
+
+    <group unless="$(arg single)">
+        <include file="$(find ira_laser_tools)/launch/laserscan_multi_merger.launch"/>
+    </group>
+
+    <node pkg="laser_filters" type="scan_to_scan_filter_chain" name="laser_filter_outside">
+        <rosparam command="load" file="$(find sequence)/config/LRF/laser_filter_outside.yaml"/>
+        <remap from="/scan_filtered" to="/scan_filtered_outside"/>
+    </node>
+
+    <node pkg="laser_filters" type="scan_to_scan_filter_chain" name="laser_filter_inside">
+        <rosparam command="load" file="$(find sequence)/config/LRF/laser_filter_inside.yaml"/>
+        <remap from="/scan" to="/scan_filtered_outside"/>
+    </node>
+
+    <group if="$(arg red_zone)">
+        <node pkg="amcl" type="amcl" name="amcl">
+            <remap from="/scan" to="/scan_filtered"/>
+            <rosparam command="load" file="$(find sequence)/config/LRF/red_zone_amcl.yaml" subst_value="true"/>
+        </node>
+    </group>
+
+    <group unless="$(arg red_zone)">
+        <node pkg="amcl" type="amcl" name="amcl">
+            <rosparam command="load" file="$(find sequence)/config/LRF/blue_zone_amcl.yaml" subst_value="true"/>
+            <remap from="/scan" to="/scan_filtered"/>
+        </node>
+    </group>
+
+
+</launch>
+                    

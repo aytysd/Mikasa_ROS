@@ -1,0 +1,2 @@
+bool fire
+string TargetSpot

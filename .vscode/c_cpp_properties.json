@@ -1,0 +1,36 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/ayato/catkin_ws/devel/include/**",
+        "/opt/ros/noetic/include/**",
+        "/home/ayato/catkin_ws/src/2022/pure_pursuit/include/**",
+        "/home/ayato/catkin_ws/src/2022/sequence/include/**",
+        // "/home/ayato/catkin_ws/src/2022/stm32interface/include/**",
+        "/usr/include/**",
+        "/home/ayato/catkin_ws/src/2022/packages/cordinate/**",
+        "/home/ayato/catkin_ws/src/2022/packages/PurePursuitBase/**",
+        "/home/ayato/catkin_ws/src/2022/packages/RViz/**",
+        "/home/ayato/catkin_ws/src/2022/packages/STM/**",
+        "/home/ayato/catkin_ws/src/2022/packages/Definition/**",
+        "/home/ayato/catkin_ws/src/2022/packages/UnderCarriageEquation/**",
+        "/home/ayato/catkin_ws/src/2022/packages/UnderCarriage/**",
+        "/home/ayato/catkin_ws/src/2022/packages/CalcOperation/**",
+        "/home/ayato/catkin_ws/src/2022/packages/CharacterManipulation/**",
+        "/home/ayato/catkin_ws/src/2022/packages/CallbackBase/**",
+        "/home/ayato/catkin_ws/src/2022/packages/FileOperation/**",
+        "/home/ayato/catkin_ws/src/2022/packages/FeedbackControl/**"  
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

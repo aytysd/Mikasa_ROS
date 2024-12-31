@@ -1,0 +1,14 @@
+fixed_frame: "odom"
+base_frame: "base_link"
+
+use_imu: false
+use_odom: false
+use_vel: false
+
+use_cloud_input: false
+
+publish_pose: false
+
+max_angular_correction_deg: 360
+max_linear_correction: 18.0
+

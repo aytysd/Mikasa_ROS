@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<link rel="stylesheet" type="text/css" href="/sequence/gui/css/StyleMaintenance.css"/>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+        <style type="text/css">
+        <!--
+        *{ padding:0px; margin:0px;}
+        -->
+        </style>
+        <title>Maintenance</title>
+        </head>
+
+    <body>
+        <script type="text/javascript" src="/sequence/gui/ROS/eventemitter2.min.js"></script>
+        <script type="text/javascript" src="/sequence/gui/ROS/roslib.min.js"></script>
+
+        <script type="text/javascript" src="/sequence/gui/js/Maintenance/Instances.js"></script>
+        <script type="text/javascript" src="/sequence/gui/js/Maintenance/ROS.js"></script>
+        <script type="text/javascript" src="/sequence/gui/js/Maintenance/ButtonsAction.js"></script>
+        <script type="text/javascript" src="/sequence/gui/js/Maintenance/SticksAction.js"></script>
+        <script type="text/javascript" src="/sequence/gui/js/Maintenance/GamePad.js"></script>
+        <script type="text/javascript" src="/sequence/gui/js/Maintenance/utils.js"></script>
+
+        <script type="text/javascript" src="/sequence/gui/js/Maintenance/Mechanism/ElevationAngleController.js"></script>
+        <script type="text/javascript" src="/sequence/gui/js/Maintenance/Mechanism/FireStatusController.js"></script>
+        <script type="text/javascript" src="/sequence/gui/js/Maintenance/Mechanism/ShootSpeedController.js"></script>
+        <script type="text/javascript" src="/sequence/gui/js/Maintenance/Mechanism/MechanismSelection.js"></script>
+        <script type="text/javascript" src="/sequence/gui/js/Maintenance/Mechanism/SteeringAngleController.js"></script>
+        <script type="text/javascript" src="/sequence/gui/js/Maintenance/Mechanism/ButtonsAction.js"></script>
+        <script type="text/javascript" src="/sequence/gui/js/Maintenance/Mechanism/SticksAction.js"></script>
+
+
+        <script type="text/javascript" src="/sequence/gui/js/Maintenance/UnderCarriage/DriveSpeedController.js"></script>
+        <script type="text/javascript" src="/sequence/gui/js/Maintenance/UnderCarriage/FireStatusController.js"></script>
+        <script type="text/javascript" src="/sequence/gui/js/Maintenance/UnderCarriage/SteeringTickController.js"></script>
+        <script type="text/javascript" src="/sequence/gui/js/Maintenance/UnderCarriage/ButtonsAction.js"></script>
+        <script type="text/javascript" src="/sequence/gui/js/Maintenance/UnderCarriage/SticksAction.js"></script>
+
+
+
+        <div class = "param" style="position: absolute;top: 2%;left: 2%;width: 95%;height: 95%;">
+            <h2 class="font">
+                [MAINTENANCE]
+            </h2>
+            <h3 class= "font">RosBridge status: <label id='rosbridge_status'>Disconnect</label></h3>
+            <h3 class= "font">GamePad status: <label id='gamepad_status'>Disconnect</label></h3>
+
+            <div id = "param" style="position: absolute; left: 2%; width: 44%;height: 42%;">
+                <h5 class="font">[機構]</h5>
+                <h5 class="font">選択機構：<label id="select_mechanism">M0</label></h5>
+                <h5 class="font" style="position: absolute;left: 50%;top: 15%;">　状態　：<label id="status_mechanism">OFF</label></h5>
+                <h5 class="font">出力：<label id="power_mechanism">10000</label></h5>
+                <input type="range" id="power_range" min="4000" max="27000" step="10" value="10000" style="width: 90%;">
+                <h5 class="font">仰角：<label id="elevation_angle_mechanism">27</label></h5>
+                <input type="range" id="elevation_angle_range" min="27" max="48" range="1" value="27"  style="width: 90%;">
+                <br>
+                <h5 class="font">操舵：<label id="angle_mechanism">90</label></h5>
+                <input type="range"id="angle_range" min="0" max="180" range="1" value="90"   style="width: 90%;">
+                
+            </div>
+            <div class = "param" style="position: absolute; left: 52%; width: 44%;height: 90%; top: 5%;">
+                <h5 class="font">足回り(駆動) ：<label id="state_steering_drive">OFF</label></h5>
+                <h4 class="font" style="position: absolute;left: 60%;top: 0%;">足回り(操舵)：<label id="state_steering">OFF</label></h4>
+                <div>
+                    <h6 class="font" style="position: absolute;top: 5%;left: 23%;">駆動</h6>
+                    <h6 class="font" style="position: absolute;top: 5%;left: 36%;">操舵</h6>
+                </div>
+                <div style="position: absolute;top: 12%; left: 10%; width: 90%;height: 20%;">
+                    <h2 class="font" style="position: absolute;left: 40%;top: -30%;">M1</h2>
+                    <input type="radio" name="M1" id="M1D" style="transform: scale(2.0);position: absolute;left: 15%;" checked>
+                    <input type="radio" name="M1" id="M1M" style="transform: scale(2.0);position: absolute;left: 30%;">
+                    <input type="range" id="RangeM1" style="position: absolute;left: 40%; width: 50%;"min ="-2000" max="2000" step="10" value="0">
+                    <h1 class="font" id="speed1" style="position: absolute;left: 75%;top: 10%;">0</h1>
+                </div>
+
+                </div>
+            <div style="position: absolute;left: 0%;top: 64%; height: 60%;width: 30%;">
+                <img src="../img/controller.png" style="position: absolute;width: 80%; height: 60%; left: 3%;">
+
+                <img src="../img/controller_off.png" title="state" alt="controller_state" id = "menu_button" style="position:absolute; top: 15%;left: 38%; width: 10%;height: 10%;">
+
+                <img src="../img/controller_off.png" title="state" alt="controller_state" id = "A_button" style="position:absolute; top: 21%;left: 58.5%; width: 6%;height: 6%;">
+                <img src="../img/controller_off.png" title="state" alt="controller_state" id = "B_button" style="position:absolute; top: 16%;left: 63%; width: 6%;height: 6%;">
+                <img src="../img/controller_off.png" title="state" alt="controller_state" id = "X_button" style="position:absolute; top: 16%;left: 53.5%; width: 6%;height: 6%;">
+                <img src="../img/controller_off.png" title="state" alt="controller_state" id = "Y_button" style="position:absolute; top: 12%;left: 58.5%; width: 6%;height: 6%;">
+
+                <img src="../img/cross_off.png" title="state" alt="controller_state" id = "cross_up" style="position:absolute; top: 12.5%;left: 21.5%; width: 6%;height: 6%;">
+                <img src="../img/cross_off.png" title="state" alt="controller_state" id = "cross_down" style="position:absolute; top: 21%;left: 21.5%; width: 6%;height: 6%;">
+                <img src="../img/cross_off.png" title="state" alt="controller_state" id = "cross_left" style="position:absolute; top: 16.8%;left: 17%; width: 6%;height: 6%;">
+                <img src="../img/cross_off.png" title="state" alt="controller_state" id = "cross_right" style="position:absolute; top: 16.8%;left: 26%; width: 6%;height: 6%;">
+
+                <img src="../img/cross_off.png" title="state" alt="controller_state" id = "L1" style="position:absolute; top: 41.8%;left: 26.5%; width: 16%;height: 8%;">
+                <img src="../img/cross_off.png" title="state" alt="controller_state" id = "L2" style="position:absolute; top: 50.8%;left: 26.5%; width: 16%;height: 8%;">
+                <img src="../img/cross_off.png" title="state" alt="controller_state" id = "R1" style="position:absolute; top: 41.8%;left: 43%; width: 16%;height: 8%;">
+                <img src="../img/cross_off.png" title="state" alt="controller_state" id = "R2" style="position:absolute; top: 50.8%;left: 43%; width: 16%;height: 8%;">
+
+                <img src ="../img/controller_off.png" title="state" alt="controller_state" id="joy_stick1" style="position:absolute; top: 26.5%;left: 27.8%; width: 10%;height: 10%;">
+                <img src ="../img/controller_off.png" title="state" alt="controller_state" id="joy_stick2" style="position:absolute; top: 26.5%;left: 48%; width: 10%;height: 10%;">
+            </div>
+
+            <script type="text/javascript" src="/sequence/gui/js/Maintenance/Initialize.js"></script>
+
+    </body>
+</html>

@@ -1,0 +1,802 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>RouteGeneration</class>
+ <widget class="QDialog" name="RouteGeneration">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1097</width>
+    <height>639</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QTextBrowser" name="textBrowser">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>430</y>
+     <width>201</width>
+     <height>71</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="ControllPoint">
+   <property name="geometry">
+    <rect>
+     <x>460</x>
+     <y>20</y>
+     <width>601</width>
+     <height>271</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>制御点</string>
+   </property>
+   <widget class="QTableWidget" name="tableWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>40</y>
+      <width>401</width>
+      <height>221</height>
+     </rect>
+    </property>
+    <column>
+     <property name="text">
+      <string>x座標(m)</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>y座標(m)</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>yaw(rad)</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>速度(m/s)</string>
+     </property>
+    </column>
+   </widget>
+   <widget class="QPushButton" name="AddButton2">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>170</y>
+      <width>101</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>追加</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="DeleteButton">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>230</y>
+      <width>101</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>削除</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QPushButton" name="GenerateRouteButton">
+   <property name="geometry">
+    <rect>
+     <x>800</x>
+     <y>310</y>
+     <width>261</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>軌道生成</string>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="conditions">
+   <property name="geometry">
+    <rect>
+     <x>450</x>
+     <y>310</y>
+     <width>331</width>
+     <height>141</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>各種条件</string>
+   </property>
+   <widget class="QLineEdit" name="Edit_TrancelationalConvergenceError">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>30</y>
+      <width>111</width>
+      <height>25</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="SaveButton">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>100</y>
+      <width>89</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>保存</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>30</y>
+      <width>91</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>制御点間群点数</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_12">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>30</y>
+      <width>67</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>個</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBox">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>100</y>
+      <width>141</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>最適経路での生成</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QPushButton" name="DisplayCurvatureButton_2">
+   <property name="geometry">
+    <rect>
+     <x>800</x>
+     <y>410</y>
+     <width>261</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>読み込み</string>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="groupBox">
+   <property name="geometry">
+    <rect>
+     <x>460</x>
+     <y>450</y>
+     <width>601</width>
+     <height>171</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>path</string>
+   </property>
+   <widget class="QGroupBox" name="groupBox_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>30</y>
+      <width>111</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>StartZone</string>
+    </property>
+    <widget class="QGroupBox" name="groupBox_3">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>0</y>
+       <width>141</width>
+       <height>131</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>スタートゾーン</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="RedZone">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>40</y>
+       <width>112</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>RedZone</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="BlueZone">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>90</y>
+       <width>112</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>BlueZone</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_4">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>30</y>
+      <width>231</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>ShootSpot</string>
+    </property>
+    <widget class="QRadioButton" name="shootspot1">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>112</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>shootsopt1</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="shootspot2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>60</y>
+       <width>112</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>shootspot2</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="shootspot3">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>30</y>
+       <width>112</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>shootsopt3</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="shootspot4">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>60</y>
+       <width>112</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>shootsopt4</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="shootspot5">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>90</y>
+       <width>112</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>shootspot5</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_5">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>30</y>
+      <width>101</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>goto/return</string>
+    </property>
+    <widget class="QGroupBox" name="groupBox_6">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>0</y>
+       <width>141</width>
+       <height>131</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>スタートゾーン</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="goto_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>40</y>
+       <width>112</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>goto</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="nomal_return">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>90</y>
+       <width>112</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>return</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_7">
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>30</y>
+      <width>111</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>upper/lower</string>
+    </property>
+    <widget class="QGroupBox" name="groupBox_8">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>0</y>
+       <width>141</width>
+       <height>131</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>スタートゾーン</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="upper">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>40</y>
+       <width>112</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>upper</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="lower">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>70</y>
+       <width>112</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>lower</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="fastest">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>100</y>
+       <width>112</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>fastest</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QWidget" name="verticalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>30</y>
+     <width>401</width>
+     <height>391</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout"/>
+  </widget>
+  <widget class="QTextBrowser" name="textBrowser_2">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>510</y>
+     <width>401</width>
+     <height>111</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>480</y>
+     <width>67</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>LOG</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>AddButton2</sender>
+   <signal>clicked()</signal>
+   <receiver>RouteGeneration</receiver>
+   <slot>AddControlPoint()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>562</x>
+     <y>264</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>557</x>
+     <y>412</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>DeleteButton</sender>
+   <signal>clicked()</signal>
+   <receiver>RouteGeneration</receiver>
+   <slot>RemoveControlPoint()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>654</x>
+     <y>260</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>652</x>
+     <y>414</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SaveButton</sender>
+   <signal>clicked()</signal>
+   <receiver>RouteGeneration</receiver>
+   <slot>SaveConditions()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1028</x>
+     <y>382</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1024</x>
+     <y>422</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Edit_TrancelationalConvergenceError</sender>
+   <signal>textEdited(QString)</signal>
+   <receiver>RouteGeneration</receiver>
+   <slot>trancelational_convergence_error(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>909</x>
+     <y>200</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>883</x>
+     <y>437</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>tableWidget</sender>
+   <signal>itemChanged(QTableWidgetItem*)</signal>
+   <receiver>RouteGeneration</receiver>
+   <slot>edit_cell(QTableWidgetItem*)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>493</x>
+     <y>220</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>407</x>
+     <y>545</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>RedZone</sender>
+   <signal>clicked()</signal>
+   <receiver>RouteGeneration</receiver>
+   <slot>ChangePath()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>552</x>
+     <y>537</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>392</x>
+     <y>380</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>BlueZone</sender>
+   <signal>clicked()</signal>
+   <receiver>RouteGeneration</receiver>
+   <slot>ChangePath()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>515</x>
+     <y>580</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>334</x>
+     <y>417</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>shootspot1</sender>
+   <signal>clicked()</signal>
+   <receiver>RouteGeneration</receiver>
+   <slot>ChangePath()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>690</x>
+     <y>541</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>323</x>
+     <y>326</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>shootspot2</sender>
+   <signal>clicked()</signal>
+   <receiver>RouteGeneration</receiver>
+   <slot>ChangePath()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>666</x>
+     <y>580</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>339</x>
+     <y>267</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>shootspot3</sender>
+   <signal>clicked()</signal>
+   <receiver>RouteGeneration</receiver>
+   <slot>ChangePath()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>799</x>
+     <y>533</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>316</x>
+     <y>212</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>shootspot4</sender>
+   <signal>clicked()</signal>
+   <receiver>RouteGeneration</receiver>
+   <slot>ChangePath()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>772</x>
+     <y>580</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>248</x>
+     <y>169</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>goto_2</sender>
+   <signal>clicked()</signal>
+   <receiver>RouteGeneration</receiver>
+   <slot>ChangePath()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>882</x>
+     <y>532</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>236</x>
+     <y>123</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>nomal_return</sender>
+   <signal>clicked()</signal>
+   <receiver>RouteGeneration</receiver>
+   <slot>ChangePath()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>937</x>
+     <y>576</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>234</x>
+     <y>82</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lower</sender>
+   <signal>clicked()</signal>
+   <receiver>RouteGeneration</receiver>
+   <slot>ChangePath()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>980</x>
+     <y>558</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>266</x>
+     <y>242</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>upper</sender>
+   <signal>clicked()</signal>
+   <receiver>RouteGeneration</receiver>
+   <slot>ChangePath()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>992</x>
+     <y>535</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>255</x>
+     <y>297</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>GenerateRouteButton</sender>
+   <signal>clicked()</signal>
+   <receiver>RouteGeneration</receiver>
+   <slot>GenerateRoute()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>499</x>
+     <y>323</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>398</x>
+     <y>356</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>fastest</sender>
+   <signal>clicked()</signal>
+   <receiver>RouteGeneration</receiver>
+   <slot>ChangePath()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>987</x>
+     <y>584</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>289</x>
+     <y>189</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>shootspot5</sender>
+   <signal>clicked()</signal>
+   <receiver>RouteGeneration</receiver>
+   <slot>ChangePath()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>618</x>
+     <y>584</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>597</x>
+     <y>624</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>GenerateRoute()</slot>
+  <slot>ShowCurvature()</slot>
+  <slot>AddOverControlPoint()</slot>
+  <slot>AddControlPoint()</slot>
+  <slot>RemoveControlPoint()</slot>
+  <slot>SaveConditions()</slot>
+  <slot>edit_max_jerk(QString)</slot>
+  <slot>edit_max_acceleration(QString)</slot>
+  <slot>edit_max_velocity(QString)</slot>
+  <slot>trancelational_convergence_error(QString)</slot>
+  <slot>rotate_convergence_error(QString)</slot>
+  <slot>Control_cycle(QString)</slot>
+  <slot>complementary_accuracy(QString)</slot>
+  <slot>edit_cell(QTableWidgetItem*)</slot>
+  <slot>config_file(QString)</slot>
+  <slot>AddObstacle()</slot>
+  <slot>RemoveObstacle()</slot>
+  <slot>ChangePath()</slot>
+ </slots>
+</ui>

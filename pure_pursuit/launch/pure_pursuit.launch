@@ -1,0 +1,25 @@
+<launch>
+
+   
+    <node name="PurePursuit_node" pkg="pure_pursuit" type="PurePursuit_node">
+        <rosparam command="load" file="$(find pure_pursuit)/config/pure_pursuit.yaml"/>
+    </node>
+
+    <!-- <node name="rosbag" type="record" pkg="rosbag" args="record -o /home/ayato/catkin_ws/src/2022/pure_pursuit/rosbag/PurePursuitBag
+    /OutputCmd 
+    /TargetPoint 
+    /IdealPurePursuitPath 
+    /RealPurePursuitPath 
+    /RobotCircle 
+    /Field 
+    /Robot 
+    /SteeringOutput
+    /tf
+    /tf_static" 
+    /> -->
+
+    <!-- <node name="pure_pursuit_reconfigure" pkg="rqt_reconfigure" type="rqt_reconfigure"/> -->
+
+    <!-- <node name="pure_pursuit_rviz" pkg="rviz" type="rviz" args="-d $(find pure_pursuit)/rviz/follow.rviz"/> -->
+
+</launch>
